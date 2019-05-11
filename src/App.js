@@ -29,6 +29,7 @@ function App() {
 
   const removedPhoto = (postRemoved) => {
 console.log(postRemoved.description)
+setPosts(posts.filter(post => post !== postRemoved))
   };
 
   return (

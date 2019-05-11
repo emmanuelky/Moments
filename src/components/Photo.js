@@ -1,11 +1,14 @@
 import React from "react";
 import { Image, Card } from "reakit";
 
+
 function Photo(props) {
+  const post = props.post
   return (
     <div className="imagewall">
-      <Card >
-        <Card.Fit className="photo"
+      <Card>
+        <Card.Fit
+          className="photo"
           use={Image}
           src={props.post.imageLink}
           alt="photo"
@@ -13,8 +16,16 @@ function Photo(props) {
           height={450}
           border-radius={50}
         />
+          <figcaption className="button-container">
+            {" "}
+            <p>{props.post.description}</p>{" "}
+          </figcaption>
+          <div className="button-container">
+          <button onClick = {() => {
+            props.onPhotoRemoved(post)
+          }}>Remove</button>
+        </div>
       </Card>
-    <button>Remove</button>
     </div>
   );
 }

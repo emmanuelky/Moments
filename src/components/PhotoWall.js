@@ -6,7 +6,7 @@ function PhotoWall(props) {
   
   return (
     <div className="App">
-    {props.posts.map(post => <Photo key={post.id} post={post} /> )}
+    {props.posts.map(post => <Photo key={post.id} post={post} onPhotoRemoved={props.onPhotoRemoved} /> )}
     </div>
   );
 }

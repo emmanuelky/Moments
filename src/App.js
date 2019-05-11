@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Title from "./components/Title";
 import PhotoWall from "./components/PhotoWall";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
@@ -16,8 +17,7 @@ function App() {
       id: "1",
       description: "Aliens???",
       imageLink:
-        "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc=" +
-        "08323785_735653395_n.jpg"
+        "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc="+"08323785_735653395_n.jpg"
     },
     {
       id: "2",
@@ -26,6 +26,11 @@ function App() {
         "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg"
     }
   ]);
+
+  const removedPhoto = (postRemoved) => {
+console.log(postRemoved.description)
+  };
+
   return (
     <div className="App">
       <Title />
@@ -33,7 +38,7 @@ function App() {
         <Row>
           <Col sm>Love</Col>
           <Col sm>
-            <PhotoWall setPosts={setPosts} posts={posts} />
+            <PhotoWall setPosts={posts} posts={posts} onPhotoRemoved={removedPhoto}/>
           </Col>
           <Col sm>Love is Sweet</Col>
         </Row>

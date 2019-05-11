@@ -12,8 +12,8 @@ function Photo(props) {
           use={Image}
           src={props.post.imageLink}
           alt="photo"
-          width={450}
-          height={450}
+          width={350}
+          height={350}
           border-radius={50}
         />
           <figcaption className="button-container">

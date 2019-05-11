@@ -16,7 +16,7 @@
   text-align: center;
   font-size: 8rem;
   font-weight: 100;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: -9px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .imagewall {
-  margin: 4rem;
+  margin: 3rem;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -68,3 +68,19 @@
 -moz-box-shadow: -6px 0px 33px -8px rgba(28,6,6,1);
 box-shadow: -6px 0px 33px -8px rgba(28,6,6,1);
 }
+
+.App .aws-btn {
+
+  --button-default-height: 48px;
+  --button-default-font-size: 14px;
+  --button-default-border-radius: 6px;
+  --button-horizontal-padding: 20px;
+  --button-raise-level: 5px;
+  --button-hover-pressure: 2;
+  --transform-speed: 0.185s;
+  --button-anchor-color: #dd596d;
+  --button-anchor-color-dark: #730812;
+  --button-anchor-color-light: #4c0005;
+  --button-anchor-color-hover: #f10b30;
+  --button-anchor-border: 1px solid #f25159;
+  }

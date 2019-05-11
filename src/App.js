@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Title from "./components/Title";
 import PhotoWall from "./components/PhotoWall";
+import AddPhoto from "./components/PhotoWall";
 
+import { Route, Link, NavLink, Switch } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
@@ -17,7 +19,8 @@ function App() {
       id: "1",
       description: "Aliens???",
       imageLink:
-        "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc="+"08323785_735653395_n.jpg"
+        "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc=" +
+        "08323785_735653395_n.jpg"
     },
     {
       id: "2",
@@ -27,24 +30,32 @@ function App() {
     }
   ]);
 
-  const removedPhoto = (postRemoved) => {
-console.log(postRemoved.description)
-setPosts(posts.filter(post => post !== postRemoved))
+  const removedPhoto = postRemoved => {
+    console.log(postRemoved.description);
+    setPosts(posts.filter(post => post !== postRemoved));
   };
 
   return (
     <div className="App">
-      <Title />
-      <Container >
+      <Route exact path="/" render={() => (
+      <div>
+          <Title />
+      <Container>
         <Row>
           <Col sm>Love</Col>
           <Col sm>
-            <PhotoWall setPosts={posts} posts={posts} onPhotoRemoved={removedPhoto}/>
+            <PhotoWall
+              setPosts={posts}
+              posts={posts}
+              onPhotoRemoved={removedPhoto}
+            />
           </Col>
           <Col sm>Love is Sweet</Col>
         </Row>
       </Container>
-      ;
+      <NavLink to="/">PhotoWall</NavLink>
+      </div>
+      )} />
     </div>
   );
 }
